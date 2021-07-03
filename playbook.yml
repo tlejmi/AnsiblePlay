@@ -1,0 +1,14 @@
+---
+# My First PlayBook
+
+- name: My first play to copy files
+  hosts: localhost
+
+  tasks:
+    - 
+      name: Ensure ~/.gitconfig copied from master.config
+      #gather_facts: false
+      ansible.builtin.copy: 
+        src: "./master.gitconfig" 
+        dest: "~/.gitconfig"
+
