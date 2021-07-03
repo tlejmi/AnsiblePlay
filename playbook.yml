@@ -1,14 +1,24 @@
 ---
 # My First PlayBook
-
-- name: My first play to copy files
+# Play with one Task 
+- name: Ensure ~/.gitconfig copied from master.config
   hosts: localhost
-
   tasks:
-    - 
-      name: Ensure ~/.gitconfig copied from master.config
-      #gather_facts: false
-      ansible.builtin.copy: 
-        src: "./master.gitconfig" 
-        dest: "~/.gitconfig"
+    #gather_facts: false
+  - ansible.builtin.copy: 
+      src: "./master.gitconfig" 
+      dest: "~/.gitconfig"
+
+# Play Two one Task 
+- name: Install ATOP and net-tools 
+  hosts: localhost
+  tasks:
+    - name: Install ATOP
+      ansible.builtin.apt: 
+        name: atop 
+        state: latest
+    - name: Install net-tools
+      ansible.builtin.apt: 
+        name: net-tools 
+        state: latest
 
