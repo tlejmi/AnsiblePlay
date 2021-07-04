@@ -1,4 +1,5 @@
 ---
+
 # My First PlayBook
 # Play with one Task 
 - name: Ensure ~/.gitconfig copied from master.config
